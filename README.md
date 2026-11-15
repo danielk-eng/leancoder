@@ -6,6 +6,13 @@ LeanCoder fixes failing tests in a Python repo while sending the model as little
 
 > **Honest summary of the results (details below):** on our 6-task mini benchmark with free OpenRouter models, the lean pipeline with a token-efficient model used **10% fewer total tokens** than a naive whole-repo / whole-file agent (same model, same 6/6 solved). Turning the Tavily stale-API guard on adds judge calls and makes the run cost *more* tokens (+21% vs baseline) — it is a safety feature, not a token saver — and its judge never had to flag anything on these tasks because the models already wrote modern code. A cheap→strong cascade with a *reasoning* "cheap" model was the worst option (+282%). The benchmark is tiny; read it as direction, not proof.
 
+## Demo
+
+2-minute walkthrough (problem, architecture, live fix, stale-API guard, results):
+[`demo/LeanCoder_demo.mp4`](demo/LeanCoder_demo.mp4)
+
+https://github.com/danielk-eng/leancoder/raw/main/demo/LeanCoder_demo.mp4
+
 ## How it works
 
 ```
