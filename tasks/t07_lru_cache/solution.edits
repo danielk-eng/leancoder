@@ -1,0 +1,8 @@
+<<<<<<< SEARCH cachelib/lru.py
+            self.stats.hits += 1
+            return self._data[key]
+=======
+            self.stats.hits += 1
+            self._data.move_to_end(key)
+            return self._data[key]
+>>>>>>> REPLACE

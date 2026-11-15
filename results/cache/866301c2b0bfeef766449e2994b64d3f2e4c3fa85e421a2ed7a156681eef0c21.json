@@ -1,0 +1,9 @@
+{
+ "text": "{\"claims\": [{\"claim\": \"DataFrame.append() is the standard way to add a row to a pandas DataFrame\", \"query\": \"pandas DataFrame.append deprecated removed current recommended method\"}, {\"claim\": \"df.append({'name': 'x', 'qty': 1}, ignore_index=True) works in current pandas versions\", \"query\": \"pandas DataFrame.append removal version 2.0 alternative concat\"}]}",
+ "prompt_tokens": 139,
+ "completion_tokens": 238,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 147
+}

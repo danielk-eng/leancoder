@@ -1,0 +1,9 @@
+{
+ "text": "The issue is a classic Python mutable default argument problem. The `errors=[]` default list is created once when the function is defined, so subsequent calls reuse the same list, causing errors to accumulate.\n\nLet me fix the `validate.py` file:\n\n### FILE: accounts/validate.py\n```python\n\"\"\"User record validation.\"\"\"\nfrom .rules import is_email, min_length\n\n\ndef validate_user(record, errors=None):\n    \"\"\"Return a list of human readable problems with `record` (empty if valid).\"\"\"\n    if errors is None:\n        errors = []\n    if not min_length(record.get(\"name\", \"\"), 2):\n        errors.append(\"name too short\")\n    if not is_email(record.get(\"email\", \"\")):\n        errors.append(\"invalid email\")\n    if record.get(\"age\", 0) < 18:\n        errors.append(\"must be an adult\")\n    return errors\n\n\ndef is_valid(record) -> bool:\n    return not validate_user(record)\n```",
+ "prompt_tokens": 682,
+ "completion_tokens": 694,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 492
+}

@@ -1,0 +1,1 @@
+{"id":"t09_token_expiry","title":"is_expired raises TypeError","issue":"is_expired(token) raises TypeError: can't compare offset-naive and offset-aware datetimes. Tokens are issued with timezone-aware expiry times.","trap":"deprecated_api:datetime.utcnow (bait in repo)","stale_patterns":["utcnow\\("]}

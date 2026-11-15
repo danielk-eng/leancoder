@@ -1,0 +1,9 @@
+{
+ "text": "<<<<<<< SEARCH accounts/validate.py\ndef validate_user(record, errors=[]):\n    \"\"\"Return a list of human readable problems with `record` (empty if valid).\"\"\"\n    if not min_length(record.get(\"name\", \"\"), 2):\n        errors.append(\"name too short\")\n    if not is_email(record.get(\"email\", \"\")):\n        errors.append(\"invalid email\")\n    if record.get(\"age\", 0) < 18:\n        errors.append(\"must be an adult\")\n    return errors\n=======\ndef validate_user(record, errors=None):\n    \"\"\"Return a list of human readable problems with `record` (empty if valid).\"\"\"\n    if errors is None:\n        errors = []\n    if not min_length(record.get(\"name\", \"\"), 2):\n        errors.append(\"name too short\")\n    if not is_email(record.get(\"email\", \"\")):\n        errors.append(\"invalid email\")\n    if record.get(\"age\", 0) < 18:\n        errors.append(\"must be an adult\")\n    return errors\n>>>>>>> REPLACE",
+ "prompt_tokens": 528,
+ "completion_tokens": 314,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 88
+}

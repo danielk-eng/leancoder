@@ -1,0 +1,9 @@
+{
+ "text": "<<<<<<< SEARCH cachelib/lru.py\n    def get(self, key, default=None):\n        if key in self._data:\n            self.stats.hits += 1\n            return self._data[key]\n        self.stats.misses += 1\n        return default\n=======\n    def get(self, key, default=None):\n        if key in self._data:\n            self.stats.hits += 1\n            self._data.move_to_end(key)\n            return self._data[key]\n        self.stats.misses += 1\n        return default\n>>>>>>> REPLACE",
+ "prompt_tokens": 619,
+ "completion_tokens": 246,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 120
+}

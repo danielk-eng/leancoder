@@ -1,0 +1,9 @@
+{
+ "text": "<<<<<<< SEARCH events/format.py\nfrom datetime import datetime\n\ndef to_iso(ts: float) -> str:\n    \"\"\"Epoch seconds -> ISO-8601 string in UTC, with explicit offset.\"\"\"\n    return datetime.utcfromtimestamp(ts).isoformat()\n=======\nfrom datetime import datetime, timezone\n\ndef to_iso(ts: float) -> str:\n    \"\"\"Epoch seconds -> ISO-8601 string in UTC, with explicit offset.\"\"\"\n    return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()\n>>>>>>> REPLACE",
+ "prompt_tokens": 574,
+ "completion_tokens": 367,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 239
+}

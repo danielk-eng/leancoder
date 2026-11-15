@@ -1,0 +1,1 @@
+{"id":"t08_pandas_append","title":"Report builder crashes with AttributeError","issue":"build_report(rows) crashes with AttributeError: 'DataFrame' object has no attribute 'append' (pandas 2.x is installed). It should return a DataFrame with one row per input dict.","trap":"deprecated_api:pandas.DataFrame.append","stale_patterns":["\\.append\\([^)]*ignore_index"]}

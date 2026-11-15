@@ -1,0 +1,9 @@
+{
+ "text": "The issue is that `is_expired` compares `token[\"expires_at\"]` (which is timezone-aware since `issue_token` uses `datetime.now(timezone.utc)`) with `datetime.utcnow()` (which is naive). The fix is to use `datetime.now(timezone.utc)` instead.\n\n### FILE: auth/tokens.py\n```python\n\"\"\"Bearer token issuing and expiry checks.\"\"\"\nfrom datetime import datetime, timedelta, timezone\n\n\ndef issue_token(user: str, ttl_seconds: int, now=None) -> dict:\n    now = now or datetime.now(timezone.utc)\n    return {\"user\": user, \"expires_at\": now + timedelta(seconds=ttl_seconds)}\n\n\ndef is_expired(token: dict) -> bool:\n    return token[\"expires_at\"] < datetime.now(timezone.utc)\n\n\ndef remaining_seconds(token: dict, now=None) -> float:\n    now = now or datetime.now(timezone.utc)\n    return max(0.0, (token[\"expires_at\"] - now).total_seconds())\n\n```",
+ "prompt_tokens": 732,
+ "completion_tokens": 694,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 468
+}

@@ -1,0 +1,9 @@
+{
+ "text": "The issue is that `datetime.utcfromtimestamp()` returns a naive datetime (no timezone info), so `.isoformat()` doesn't include the UTC offset. We need to make the datetime timezone-aware before formatting.\n\n### FILE: events/format.py\n```python\n\"\"\"Timestamp formatting for the public events API.\"\"\"\nfrom datetime import datetime, timezone\n\n\ndef to_iso(ts: float) -> str:\n    \"\"\"Epoch seconds -> ISO-8601 string in UTC, with explicit offset.\"\"\"\n    return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()\n\n\ndef day_bucket(ts: float) -> str:\n    return to_iso(ts)[:10]\n\n```",
+ "prompt_tokens": 757,
+ "completion_tokens": 366,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 219
+}

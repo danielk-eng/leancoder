@@ -1,0 +1,5 @@
+<<<<<<< SEARCH game/leaderboard.py
+    ranked = sorted(scores.items(), key=lambda kv: kv[1])
+=======
+    ranked = sorted(scores.items(), key=lambda kv: (-kv[1], kv[0]))
+>>>>>>> REPLACE

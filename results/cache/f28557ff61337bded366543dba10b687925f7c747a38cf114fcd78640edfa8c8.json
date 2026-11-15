@@ -1,0 +1,8 @@
+{
+ "text": "pong",
+ "prompt_tokens": 22,
+ "completion_tokens": 159,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false
+}

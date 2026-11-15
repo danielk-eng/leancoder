@@ -1,0 +1,5 @@
+<<<<<<< SEARCH auth/tokens.py
+    return token["expires_at"] < datetime.utcnow()
+=======
+    return token["expires_at"] < datetime.now(timezone.utc)
+>>>>>>> REPLACE

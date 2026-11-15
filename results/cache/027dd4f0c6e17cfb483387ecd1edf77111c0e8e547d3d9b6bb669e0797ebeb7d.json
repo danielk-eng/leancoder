@@ -1,0 +1,9 @@
+{
+ "text": "The bug is caused by using a mutable default argument `errors=[]` in the `validate_user` function. In Python, default arguments are evaluated once at function definition time, so the same list object is reused across all calls. The fix is to use `None` as the default and create a new list inside the function.\n\n### FILE: accounts/validate.py\n```python\n\"\"\"User record validation.\"\"\"\nfrom .rules import is_email, min_length\n\n\ndef validate_user(record, errors=None):\n    \"\"\"Return a list of human readable problems with `record` (empty if valid).\"\"\"\n    if errors is None:\n        errors = []\n    if not min_length(record.get(\"name\", \"\"), 2):\n        errors.append(\"name too short\")\n    if not is_email(record.get(\"email\", \"\")):\n        errors.append(\"invalid email\")\n    if record.get(\"age\", 0) < 18:\n        errors.append(\"must be an adult\")\n    return errors\n\n\ndef is_valid(record) -> bool:\n    return not validate_user(record)\n\n```",
+ "prompt_tokens": 682,
+ "completion_tokens": 326,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 108
+}

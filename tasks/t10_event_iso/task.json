@@ -1,0 +1,1 @@
+{"id":"t10_event_iso","title":"Event timestamps lack a UTC offset","issue":"to_iso(1704067200) returns '2024-01-01T00:00:00' but API clients require an explicit offset: '2024-01-01T00:00:00+00:00'.","trap":"deprecated_api:datetime.utcfromtimestamp (bait in repo)","stale_patterns":["utcfromtimestamp\\("]}

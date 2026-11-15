@@ -1,0 +1,9 @@
+{
+ "text": "<<<<<<< SEARCH auth/tokens.py:11\nreturn token[\"expires_at\"] < datetime.utcnow()\n=======\nreturn token[\"expires_at\"] < datetime.now(timezone.utc)\n>>>>>>> REPLACE",
+ "prompt_tokens": 505,
+ "completion_tokens": 1025,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 973
+}

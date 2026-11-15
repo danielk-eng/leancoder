@@ -1,0 +1,12 @@
+<<<<<<< SEARCH settings/access.py
+    for part in path.split("."):
+        cur = cur[part]
+    return cur
+=======
+    for part in path.split("."):
+        try:
+            cur = cur[part]
+        except (KeyError, TypeError):
+            return default
+    return cur
+>>>>>>> REPLACE

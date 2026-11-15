@@ -1,0 +1,1 @@
+{"id":"t05_duration","title":"Duration parser miscounts hours","issue":"parse_duration('1h30m') returns 1890 seconds, expected 5400. Minutes and seconds look right.","trap":null,"stale_patterns":[]}

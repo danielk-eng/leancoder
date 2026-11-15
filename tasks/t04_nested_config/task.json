@@ -1,0 +1,1 @@
+{"id":"t04_nested_config","title":"get_nested crashes on missing keys","issue":"get_nested(cfg, 'a.b.c', default) raises KeyError/TypeError when the path does not exist instead of returning `default`. Falsy values that do exist (0, False, '') must still be returned as-is.","trap":null,"stale_patterns":[]}

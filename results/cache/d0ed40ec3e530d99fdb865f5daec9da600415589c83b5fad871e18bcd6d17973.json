@@ -1,0 +1,9 @@
+{
+ "text": "<<<<<<< SEARCH timeutil/parse.py\n_UNITS = {\"d\": 86400, \"h\": 360, \"m\": 60, \"s\": 1}\n=======\n_UNITS = {\"d\": 86400, \"h\": 3600, \"m\": 60, \"s\": 1}\n>>>>>>> REPLACE",
+ "prompt_tokens": 553,
+ "completion_tokens": 303,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 212
+}

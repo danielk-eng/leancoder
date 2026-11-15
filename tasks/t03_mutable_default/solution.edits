@@ -1,0 +1,9 @@
+<<<<<<< SEARCH accounts/validate.py
+def validate_user(record, errors=[]):
+    """Return a list of human readable problems with `record` (empty if valid)."""
+=======
+def validate_user(record, errors=None):
+    """Return a list of human readable problems with `record` (empty if valid)."""
+    if errors is None:
+        errors = []
+>>>>>>> REPLACE

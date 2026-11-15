@@ -1,0 +1,1 @@
+{"id":"t02_leaderboard","title":"Leaderboard lists the lowest scores first","issue":"top_players(scores, n) should return the n highest scores, best first; ties are broken alphabetically by name. Right now it returns the lowest scores first.","trap":null,"stale_patterns":[]}

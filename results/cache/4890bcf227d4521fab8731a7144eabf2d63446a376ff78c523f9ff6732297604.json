@@ -1,0 +1,9 @@
+{
+ "text": "<<<<<<< SEARCH auth/tokens.py\ndef is_expired(token: dict) -> bool:\n    return token[\"expires_at\"] < datetime.utcnow()\n=======\ndef is_expired(token: dict) -> bool:\n    return token[\"expires_at\"] < datetime.now(timezone.utc)\n>>>>>>> REPLACE",
+ "prompt_tokens": 446,
+ "completion_tokens": 1726,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 1653
+}

@@ -1,0 +1,9 @@
+{
+ "text": "### FILE: sales/report.py\n```python\n\"\"\"Build a sales report table.\"\"\"\nimport pandas as pd\n\nfrom .clean import normalize\n\n\ndef add_row(df, row):\n    return pd.concat([df, pd.DataFrame([normalize(row)])], ignore_index=True)\n\n\ndef build_report(rows):\n    df = pd.DataFrame(columns=[\"name\", \"qty\"])\n    for row in rows:\n        df = add_row(df, row)\n    return df\n\n\ndef total_qty(df) -> int:\n    return int(df[\"qty\"].sum())\n\n```",
+ "prompt_tokens": 691,
+ "completion_tokens": 2400,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 2285
+}

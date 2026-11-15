@@ -1,0 +1,5 @@
+<<<<<<< SEARCH shop/catalog.py
+    start = page * per_page
+=======
+    start = (page - 1) * per_page
+>>>>>>> REPLACE

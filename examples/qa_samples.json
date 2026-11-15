@@ -1,0 +1,8 @@
+[
+  {"question": "How do I append a row to a pandas DataFrame?",
+   "answer": "Use df = df.append({'name': 'x', 'qty': 1}, ignore_index=True). DataFrame.append is the standard way to add a row."},
+  {"question": "How do I get the current UTC time in Python?",
+   "answer": "Call datetime.datetime.utcnow(); it is the recommended way to get the current UTC time."},
+  {"question": "How do I read a CSV file into pandas?",
+   "answer": "Use pandas.read_csv('file.csv'), which returns a DataFrame."}
+]

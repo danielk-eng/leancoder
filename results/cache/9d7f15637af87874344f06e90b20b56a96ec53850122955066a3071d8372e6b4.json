@@ -1,0 +1,9 @@
+{
+ "text": "{\"stale\": true, \"replacement\": \"datetime.now(timezone.utc)\", \"quote\": \"The fix for this is rather easy: replace `utcnow()` with `now(datetime.UTC)`.\", \"source\": 1}",
+ "prompt_tokens": 528,
+ "completion_tokens": 783,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 731
+}

@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.sh
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+bifrost_data/*.db
+bifrost_data/*.db-*
+bifrost_data/logs/
+*.log
+*.db
+*.db-*

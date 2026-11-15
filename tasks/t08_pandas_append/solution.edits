@@ -1,0 +1,6 @@
+<<<<<<< SEARCH sales/report.py
+    return df.append(normalize(row), ignore_index=True)
+=======
+    new = pd.DataFrame([normalize(row)])
+    return pd.concat([df, new], ignore_index=True)
+>>>>>>> REPLACE

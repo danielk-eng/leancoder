@@ -1,0 +1,9 @@
+{
+ "text": "{\"stale\": false, \"replacement\": \"\", \"quote\": \"Use `pandas.concat()` instead (GH 35407).\", \"source\": 1}",
+ "prompt_tokens": 522,
+ "completion_tokens": 1779,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 1739
+}

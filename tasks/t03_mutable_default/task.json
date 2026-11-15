@@ -1,0 +1,1 @@
+{"id":"t03_mutable_default","title":"Validation errors leak between calls","issue":"validate_user() reports errors from previous calls: after validating an invalid user, validating a valid user still returns the old errors.","trap":null,"stale_patterns":[]}

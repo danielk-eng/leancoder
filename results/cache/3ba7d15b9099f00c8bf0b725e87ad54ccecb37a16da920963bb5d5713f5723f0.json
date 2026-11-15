@@ -1,0 +1,9 @@
+{
+ "text": "The issue is that `get()` doesn't update the recency of the accessed key. In an LRU cache, a `get` should mark the key as recently used by moving it to the end of the OrderedDict.\n\nHere's the fix:\n\n<<<<<<< SEARCH cachelib/lru.py\n    def get(self, key, default=None):\n        if key in self._data:\n            self.stats.hits += 1\n            return self._data[key]\n        self.stats.misses += 1\n        return default\n=======\n    def get(self, key, default=None):\n        if key in self._data:\n            self.stats.hits += 1\n            self._data.move_to_end(key)\n            return self._data[key]\n        self.stats.misses += 1\n        return default\n>>>>>>> REPLACE",
+ "prompt_tokens": 783,
+ "completion_tokens": 312,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 135
+}

@@ -1,0 +1,10 @@
+<<<<<<< SEARCH events/format.py
+from datetime import datetime
+=======
+from datetime import datetime, timezone
+>>>>>>> REPLACE
+<<<<<<< SEARCH events/format.py
+    return datetime.utcfromtimestamp(ts).isoformat()
+=======
+    return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
+>>>>>>> REPLACE

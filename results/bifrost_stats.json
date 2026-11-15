@@ -1,0 +1,13 @@
+{
+  "total_requests": 83,
+  "success_rate": 95.18072289156626,
+  "user_facing_success_rate": 95.18072289156626,
+  "user_facing_total_requests": 83,
+  "average_latency": 10081.425305650602,
+  "total_tokens": 113084,
+  "prompt_tokens": 41173,
+  "completion_tokens": 71911,
+  "total_cost": 0,
+  "cache_hit_rate_total_requests": 83,
+  "has_previous_period": false
+}

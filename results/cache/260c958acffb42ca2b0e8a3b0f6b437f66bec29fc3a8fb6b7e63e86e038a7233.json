@@ -1,0 +1,8 @@
+{
+ "text": "pong",
+ "prompt_tokens": 22,
+ "completion_tokens": 29,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false
+}

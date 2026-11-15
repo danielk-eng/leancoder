@@ -1,0 +1,9 @@
+{
+ "text": "Looking at the issue, `parse_duration('1h30m')` returns 2160 instead of 5400. The problem is in the `_UNITS` dictionary in `timeutil/parse.py` - the value for hours (\"h\") is 360, but it should be 3600 (since 1 hour = 3600 seconds).\n\nThe current calculation: `1 * 360 + 30 * 60 = 360 + 1800 = 2160`\nThe correct calculation: `1 * 3600 + 30 * 60 = 3600 + 1800 = 5400`\n\nLet me fix the `_UNITS` dictionary:\n\n### FILE: timeutil/parse.py\n```python\n\"\"\"Parse strings such as '1h30m' or '45s' into seconds.\"\"\"\nimport re\n\n_UNITS = {\"d\": 86400, \"h\": 3600, \"m\": 60, \"s\": 1}\n_TOKEN = re.compile(r\"(\\d+)([dhms])\")\n\n\ndef parse_duration(text: str) -> int:\n    text = text.strip().lower()\n    tokens = _TOKEN.findall(text)\n    if not tokens or \"\".join(n + u for n, u in tokens) != text:\n        raise ValueError(f\"bad duration: {text!r}\")\n    return sum(int(n) * _UNITS[u] for n, u in tokens)\n```",
+ "prompt_tokens": 722,
+ "completion_tokens": 637,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 298
+}

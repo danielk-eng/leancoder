@@ -1,0 +1,1 @@
+{"id":"t06_mean_rating","title":"Average rating is truncated and crashes on empty input","issue":"mean_rating([1, 2]) returns 1 instead of 1.5, and mean_rating([]) raises ZeroDivisionError; it should return 0.0 for no ratings.","trap":null,"stale_patterns":[]}

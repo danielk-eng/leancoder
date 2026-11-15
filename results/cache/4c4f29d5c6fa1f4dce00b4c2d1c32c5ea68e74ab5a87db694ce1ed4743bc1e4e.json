@@ -1,0 +1,9 @@
+{
+ "text": "The bug is in `timeutil/parse.py` - the hour unit is incorrectly set to 360 seconds instead of 3600 seconds.\n\n### FILE: timeutil/parse.py\n```python\n\"\"\"Parse strings such as '1h30m' or '45s' into seconds.\"\"\"\nimport re\n\n_UNITS = {\"d\": 86400, \"h\": 3600, \"m\": 60, \"s\": 1}\n_TOKEN = re.compile(r\"(\\d+)([dhms])\")\n\n\ndef parse_duration(text: str) -> int:\n    text = text.strip().lower()\n    tokens = _TOKEN.findall(text)\n    if not tokens or \"\".join(n + u for n, u in tokens) != text:\n        raise ValueError(f\"bad duration: {text!r}\")\n    return sum(int(n) * _UNITS[u] for n, u in tokens)\n\n```",
+ "prompt_tokens": 722,
+ "completion_tokens": 531,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 329
+}

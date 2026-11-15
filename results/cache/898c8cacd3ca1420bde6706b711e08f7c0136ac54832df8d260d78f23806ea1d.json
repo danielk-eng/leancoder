@@ -1,0 +1,9 @@
+{
+ "text": "{\"claims\": [{\"claim\": \"datetime.datetime.utcnow() is the recommended way to get current UTC time\", \"query\": \"Python datetime.utcnow deprecated recommended alternative\"}]}",
+ "prompt_tokens": 124,
+ "completion_tokens": 182,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 141
+}

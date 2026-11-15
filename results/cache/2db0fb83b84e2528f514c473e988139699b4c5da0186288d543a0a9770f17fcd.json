@@ -1,0 +1,9 @@
+{
+ "text": "The bug is that `LRUCache.get()` doesn't update the recency of the accessed key. In an LRU cache, a `get` operation should mark the key as recently used by moving it to the end of the OrderedDict.\n\n### FILE: cachelib/lru.py\n```python\n\"\"\"A tiny LRU cache.\"\"\"\nfrom collections import OrderedDict\n\nfrom .stats import Counter\n\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        if capacity < 1:\n            raise ValueError(\"capacity must be >= 1\")\n        self.capacity = capacity\n        self._data = OrderedDict()\n        self.stats = Counter()\n\n    def get(self, key, default=None):\n        if key in self._data:\n            self.stats.hits += 1\n            self._data.move_to_end(key)\n            return self._data[key]\n        self.stats.misses += 1\n        return default\n\n    def put(self, key, value):\n        if key in self._data:\n            self._data.move_to_end(key)\n        self._data[key] = value\n        if len(self._data) > self.capacity:\n            self._data.popitem(last=False)\n\n    def __contains__(self, key):\n        return key in self._data\n\n    def __len__(self):\n        return len(self._data)\n\n```",
+ "prompt_tokens": 808,
+ "completion_tokens": 463,
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "is_fallback": false,
+ "reasoning_tokens": 178
+}

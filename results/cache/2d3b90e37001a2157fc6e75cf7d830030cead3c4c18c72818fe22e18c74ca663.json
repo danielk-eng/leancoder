@@ -1,0 +1,9 @@
+{
+ "text": "<<<<<<< SEARCH cachelib/lru.py\n    if key in self._data:\n        self.stats.hits += 1\n        return self._data[key]\n    self.stats.misses += 1\n    return default\n=======\n    if key in self._data:\n        self.stats.hits += 1\n        self._data.move_to_end(key)\n        return self._data[key]\n    self.stats.misses += 1\n    return default\n>>>>\n>>> REPLACE",
+ "prompt_tokens": 620,
+ "completion_tokens": 2592,
+ "model": "nvidia/nemotron-3.5-lightning:free",
+ "served_by": "nvidia/nemotron-3.5-lightning:free",
+ "is_fallback": false,
+ "reasoning_tokens": 2486
+}
